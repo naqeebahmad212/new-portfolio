@@ -4,9 +4,12 @@ import PageWrapper from "@/components/PageWrapper";
 import Projects from "@/components/Projects";
 import Skills from "@/components/Skills";
 import Services from "@/components/services";
+import { prisma } from "@/lib/prisma";
 import Image from "next/image";
 
-export default function Home() {
+export default async function Home() {
+
+  const projects=await prisma.project.findMany({orderBy:{id:'desc'}})
   return (
     <PageWrapper>
       <div className="w-full overflow-hidden">
@@ -20,7 +23,7 @@ export default function Home() {
           <Skills />
         </section>
         <section className="sticky top-0 ]">
-          <Projects />
+          <Projects projects={projects.slice(0,6)} />
         </section>
 
         <section className="sticky top-0 ]">

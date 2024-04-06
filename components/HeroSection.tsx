@@ -40,6 +40,7 @@ const HeroSection = () => {
   const rotateZ = useTransform(scrollYProgress, [0, 0.2], [20, 0]);
 
   const translateY = useTransform(scrollYProgress, [0, 0.8], [0, -500]);
+  const translateYDown = useTransform(scrollYProgress, [0, 0.8], [0, 400]);
 
   const translateYBackg = useTransform(scrollYProgress, [0, 0.2], [0, 500]);
 
@@ -105,7 +106,7 @@ const HeroSection = () => {
               backgroundColor: `${bgClr}`,
 
               opacity,
-              translateY,
+              translateY:translateYDown,
             }}
           >
             <motion.img
@@ -113,7 +114,7 @@ const HeroSection = () => {
               animate={{ y: 0 }}
               className="relative z-30 "
               style={{
-                translateY,
+                translateY:translateYDown,
                 opacity,
               }}
               transition={{ duration: 0.5 }}

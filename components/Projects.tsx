@@ -4,8 +4,13 @@ import { BackgroundBeams } from "./ui/background-beams";
 import { LayoutGrid } from "./ui/layout-grid";
 import { MotionValue, motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
+import { Project } from "@prisma/client";
 
-const Projects = () => {
+interface ProjectsPrps{
+  projects:Project[]
+}
+
+const Projects = ({projects}:ProjectsPrps) => {
   const ref = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: ref,
@@ -14,7 +19,7 @@ const Projects = () => {
   const translateY = useTransform(scrollYProgress, [0, 0.5], [-500, 0]);
 
   const scale = useTransform(scrollYProgress, [0, 0.4], [0, 1]);
-  const opacity = useTransform(scrollYProgress, [0.2, 0.4], [0, 1]);
+  const opacity = useTransform(scrollYProgress, [0, 0.4], [0, 1]);
   const rotateZ = useTransform(scrollYProgress, [0, 0.3], [20, 0]);
   const translateX = useTransform(scrollYProgress, [0.5, 1], [0, 1500]);
   const cards = [
@@ -65,7 +70,7 @@ const Projects = () => {
         Projects
       </h1>
       <BackgroundBeams />
-      <LayoutGrid cards={cards} />
+      <LayoutGrid cards={projects} />
     </motion.div>
   );
 };
