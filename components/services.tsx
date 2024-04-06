@@ -13,9 +13,10 @@ const Services = () => {
   // const springConfig = { stiffness: 300, damping: 30, bounce: 100 };
 
   const translateX = useTransform(scrollYProgress, [0.7, 1], [0, 1200]);
-  const translateY = useTransform(scrollYProgress, [0, 0.5], [-500, 0]);
+  const translateY = useTransform(scrollYProgress, [0.5, 0.7], [0, 200]);
   const scale = useTransform(scrollYProgress, [0, 0.5], [0, 1]);
   const opacity = useTransform(scrollYProgress, [0, 0.5], [0, 1]);
+  // const marginTop = useTransform(scrollYProgress, [0.5, 0.65], [0, 200]);
 
   const translateXCard1 = useTransform(scrollYProgress, [0, 0.2], [-200, 0]);
 
@@ -27,8 +28,9 @@ const Services = () => {
     // <AuroraBackground className="relative">
     <motion.div
       style={{
+        translateY,
         translateX,
-        
+
         scale,
         opacity,
       }}
@@ -45,7 +47,7 @@ const Services = () => {
           translateX: translateXCard1,
         }}
         transition={{ duration: 2 }}
-        className="plan w-[80%] md:w-[400px] lg:w-[300px] card1 mt-[60px] text-gray-300"
+        className="plan w-[80%] md:w-[400px] lg:w-[300px] card1 mt-[60px] text-gray-300 z-[999]"
       >
         <div className="inner">
           <span className="pricing">

@@ -21,7 +21,7 @@ const Skills = () => {
   const secScale = useTransform(scrollYProgress, [0, 0.5], [0, 1]);
   const opacity = useTransform(scrollYProgress, [0, 0.5], [0, 1]);
   const translateX = useTransform(scrollYProgress, [0.6, 0.9], [0, 1300]);
-  const translateY = useTransform(scrollYProgress, [0, 0.5], [-500, 0]);
+  const translateY = useTransform(scrollYProgress, [0.5, 0.7], [0, 200]);
   let htmlSkills = 89;
   let cssSkills = 88;
   let jsSkills = 84;
@@ -53,7 +53,7 @@ const Skills = () => {
 
   return (
     <motion.div
-      style={{ scale: secScale, translateX,  opacity }}
+      style={{ scale: secScale, translateX, opacity, translateY }}
       ref={ref}
       className="py-10 w-screen lg:h-screen  bg-[#041130]"
     >
