@@ -20,7 +20,8 @@ const Projects = ({ projects }: ProjectsPrps) => {
   });
 
   const pathname = usePathname();
-  const translateY = useTransform(scrollYProgress, [0.5, 1], [0, 250]);
+  const translateY = useTransform(scrollYProgress, [0.5, 0.75], [0, 250]);
+  const marginBottom = useTransform(scrollYProgress, [0.7, 0.75], [0, 250]);
 
   const scale = useTransform(scrollYProgress, [0, 0.4], [0, 1]);
   const opacity = useTransform(scrollYProgress, [0, 0.4], [0, 1]);
@@ -29,7 +30,13 @@ const Projects = ({ projects }: ProjectsPrps) => {
 
   return (
     <motion.div
-      style={{ translateX, opacity, scale, translateY }}
+      style={{
+        // translateX,
+        opacity,
+        scale,
+        translateY,
+        marginBottom,
+      }}
       transition={{ duration: 5 }}
       ref={ref}
       className="relative w-screen pb-5 lg:px-[100px] h-screen bg-[#041130]"

@@ -13,7 +13,7 @@ const Services = () => {
   // const springConfig = { stiffness: 300, damping: 30, bounce: 100 };
 
   const translateX = useTransform(scrollYProgress, [0.7, 1], [0, 1200]);
-  const translateY = useTransform(scrollYProgress, [0.5, 1], [0, 250]);
+  const translateY = useTransform(scrollYProgress, [0.5, 0.75], [0, 250]);
   const scale = useTransform(scrollYProgress, [0, 0.5], [0, 1]);
   const opacity = useTransform(scrollYProgress, [0, 0.5], [0, 1]);
   // const marginTop = useTransform(scrollYProgress, [0.5, 0.65], [0, 200]);
@@ -29,7 +29,7 @@ const Services = () => {
     <motion.div
       style={{
         translateY,
-        translateX,
+        // translateX,
 
         scale,
         opacity,
