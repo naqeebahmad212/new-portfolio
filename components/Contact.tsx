@@ -1,6 +1,8 @@
 "use client";
+import { AddUserMessage } from "@/utils/db";
 import { motion, useScroll, useSpring, useTransform } from "framer-motion";
 import React from "react";
+import PostSubmitBtn from "./SubmitBtn";
 
 // write a function to add to number
 
@@ -29,7 +31,7 @@ function Contact() {
         Contact us
       </h1>{" "}
       <div className="form-container self-center">
-        <form className="form">
+        <form action={AddUserMessage} className="form">
           <div className="form-group relative">
             <label className="plc">Name</label>
             <input className="inp" type="text" id="name" name="name" required />
@@ -46,11 +48,14 @@ function Contact() {
           </div>
           <div className="form-group relative">
             <label htmlFor="textarea">How Can We Help You?</label>
-            <textarea name="textarea" id="textarea" required>
+            <textarea name="message" id="textarea" required>
               {" "}
             </textarea>
           </div>
-          <button className="sbButton">Submit</button>
+          <PostSubmitBtn className="sbButton">Send</PostSubmitBtn>
+          {/* <button className="sbButton">
+
+          </button> */}
         </form>
       </div>
     </motion.div>

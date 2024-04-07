@@ -44,8 +44,15 @@ const Header = ({ user, session, ifKhan }: UserProps) => {
 
           {khan && (
             <div>
-              <Link href={"/add-new-project"} className="link text-blue-500">
+              <Link href={"/admin/add-new-project"} className=" text-blue-500">
                 Add Project
+              </Link>
+
+              <Link
+                href={"/admin/user-messages"}
+                className=" text-blue-500 px-3"
+              >
+                Messages
               </Link>
             </div>
           )}

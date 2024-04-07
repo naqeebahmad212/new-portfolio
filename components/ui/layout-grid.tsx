@@ -12,12 +12,9 @@ import Image from "next/image";
 import { Project } from "@prisma/client";
 import Link from "next/link";
 
-
-
 export const LayoutGrid = ({ cards }: { cards: Project[] }) => {
   const [selected, setSelected] = useState<Project | null>(null);
-  const [lastSelected, setLastSelected] = useState<Project| null>(null);
-
+  const [lastSelected, setLastSelected] = useState<Project | null>(null);
 
   const handleClick = (card: Project) => {
     setLastSelected(selected);
@@ -34,11 +31,11 @@ export const LayoutGrid = ({ cards }: { cards: Project[] }) => {
   return (
     <motion.div className="w-full h-full  pb-[100px] grid grid-cols-1 md:grid-cols-3  max-w-7xl mx-auto gap-4 ">
       {cards.map((card, i) => (
-        <div key={i} className={cn( "")}>
+        <div key={i} className={cn("")}>
           <motion.div
             onClick={() => handleClick(card)}
             className={cn(
-              selected?.id !== card.id && 'flex flex-col',
+              selected?.id !== card.id && "flex flex-col",
               "relative overflow-hidden",
               selected?.id === card.id
                 ? "rounded-lg cursor-pointer absolute inset-0 h-[70%] w-full md:w-[70%] m-auto z-50 flex justify-center items-center flex-wrap flex-col"
@@ -66,16 +63,23 @@ export const LayoutGrid = ({ cards }: { cards: Project[] }) => {
   );
 };
 
-const BlurImage = ({ card , selectedId }: { card: Project , selectedId:string| undefined }) => {
+const BlurImage = ({
+  card,
+  selectedId,
+}: {
+  card: Project;
+  selectedId: string | undefined;
+}) => {
   const [loaded, setLoaded] = useState(true);
   return (
-    <div 
-    style={{backgroundImage:`url(${card.image})`}}
-    // onLoad={() => setLoaded(true)}
-    className={cn(
-      " object-cover bg-cover flex items-end justify-center text-white bg-no-repeat absolute inset-0 h-full w-full transition duration-200 ",
-      loaded ? "blur-none" : "blur-md"
-    )}>
+    <div
+      style={{ backgroundImage: `url(${card.image})` }}
+      // onLoad={() => setLoaded(true)}
+      className={cn(
+        " object-cover bg-cover flex items-end justify-center text-white bg-no-repeat absolute inset-0 h-full w-full transition duration-200 ",
+        loaded ? "blur-none" : "blur-md"
+      )}
+    >
       {/* <Image
       src={card.image}
       height="500"
@@ -83,18 +87,16 @@ const BlurImage = ({ card , selectedId }: { card: Project , selectedId:string| u
      
       alt="thumbnail"
     /> */}
-    {selectedId !== card.id && (
-      <div className="p-5 bg-black w-full bg-opacity-25 text-center">
-
-        {card.title}
-      </div>
-    )}
+      {selectedId !== card.id && (
+        <div className="p-5 bg-black w-full bg-opacity-25 text-center">
+          {card.title}
+        </div>
+      )}
     </div>
   );
 };
 
 const SelectedCard = ({ selected }: { selected: Project | null }) => {
-
   return (
     <div className="bg-transparent h-full w-full flex flex-col justify-end rounded-lg shadow-2xl relative z-[60]">
       <motion.div
@@ -121,9 +123,8 @@ const SelectedCard = ({ selected }: { selected: Project | null }) => {
         }}
         className="relative px-8 pb-4 z-[70] text-white"
       >
-        <Link href={`project/${selected?.id}`}>
-
-        {selected?.snippet}
+        <Link className="link-hover" href={`project/${selected?.id}`}>
+          {selected?.snippet}
         </Link>
       </motion.div>
     </div>

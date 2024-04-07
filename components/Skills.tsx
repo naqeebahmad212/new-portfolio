@@ -21,7 +21,7 @@ const Skills = () => {
   const secScale = useTransform(scrollYProgress, [0, 0.5], [0, 1]);
   const opacity = useTransform(scrollYProgress, [0, 0.5], [0, 1]);
   const translateX = useTransform(scrollYProgress, [0.6, 0.9], [0, 1300]);
-  const translateY = useTransform(scrollYProgress, [0.5, 0.7], [0, 200]);
+  const translateY = useTransform(scrollYProgress, [0.5, 1], [0, 250]);
   let htmlSkills = 89;
   let cssSkills = 88;
   let jsSkills = 84;
@@ -217,7 +217,7 @@ const Skills = () => {
                   })}
                   strokeWidth={10}
                   value={projectManagement}
-                  text={`${projectCompletion}%`}
+                  text={`${projectManagement}%`}
                 />
               </div>
               <span className="text-white text-center text-[11px]">
