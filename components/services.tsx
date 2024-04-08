@@ -18,11 +18,11 @@ const Services = () => {
   const opacity = useTransform(scrollYProgress, [0, 0.5], [0, 1]);
   // const marginTop = useTransform(scrollYProgress, [0.5, 0.65], [0, 200]);
 
-  const translateXCard1 = useTransform(scrollYProgress, [0, 0.2], [-200, 0]);
+  const translateXCard1 = useTransform(scrollYProgress, [0.2, 0.3], [-200, 0]);
 
-  const translateXCard2 = useTransform(scrollYProgress, [0, 0.3], [-400, 0]);
+  const translateXCard2 = useTransform(scrollYProgress, [0.2, 0.4], [-500, 0]);
 
-  const translateXCard3 = useTransform(scrollYProgress, [0, 0.4], [-600, 0]);
+  const translateXCard3 = useTransform(scrollYProgress, [0.2, 0.5], [-830, 0]);
 
   return (
     // <AuroraBackground className="relative">
@@ -35,7 +35,7 @@ const Services = () => {
         opacity,
       }}
       ref={servIceRef}
-      className="lg:h-screen w-screen  bg-[#041130] gap-5 flex items-center justify-center flex-col lg:flex-row sticky top-0 "
+      className="lg:h-screen w-screen  bg-[#041130] gap-5 flex items-center md:items-start pt-[120px] justify-center flex-col lg:flex-row sticky top-0 "
     >
       <div className="absolute top-0 lg:top-[80px] w-full my-5 left-5 text-white">
         <h1 className="w-full text-center text-2xl text-[#bed6fb] font-bold">
@@ -51,14 +51,13 @@ const Services = () => {
       >
         <div className="inner">
           <span className="pricing">
-            <span>
-              $49 <small>/ m</small>
-            </span>
+            <span>$5</span>
           </span>
-          <p className="title">Professional</p>
-          <p className="info">
-            This plan is for those who have a team already and running a large
-            business.
+          <p className="title">Basic</p>
+          <p className="info py-3">
+            I will build a basic single page website with maximum of three
+            section using next js react js that will run fast than your
+            expectations.
           </p>
           <ul className="features">
             <li>
@@ -77,7 +76,7 @@ const Services = () => {
                 </svg>
               </span>
               <span>
-                <strong>20</strong> team members
+                <strong>1</strong> Page
               </span>
             </li>
             <li>
@@ -96,7 +95,7 @@ const Services = () => {
                 </svg>
               </span>
               <span>
-                Plan <strong>team meetings</strong>
+                Design <strong>Customization</strong>
               </span>
             </li>
             <li>
@@ -114,7 +113,7 @@ const Services = () => {
                   ></path>
                 </svg>
               </span>
-              <span>File sharing</span>
+              <span>Responsive Design</span>
             </li>
           </ul>
           <div className="action">
@@ -134,14 +133,12 @@ const Services = () => {
       >
         <div className="inner">
           <span className="pricing">
-            <span>
-              $49 <small>/ m</small>
-            </span>
+            <span>$10</span>
           </span>
-          <p className="title">Professional</p>
+          <p className="title">Standard</p>
           <p className="info">
-            This plan is for those who have a team already and running a large
-            business.
+            I will build semi meduim full stack website with max two pages using
+            next js react js.
           </p>
           <ul className="features">
             <li>
@@ -160,7 +157,7 @@ const Services = () => {
                 </svg>
               </span>
               <span>
-                <strong>20</strong> team members
+                <strong>2</strong> Pages
               </span>
             </li>
             <li>
@@ -179,7 +176,7 @@ const Services = () => {
                 </svg>
               </span>
               <span>
-                Plan <strong>team meetings</strong>
+                Design <strong>Customization</strong>
               </span>
             </li>
             <li>
@@ -197,7 +194,42 @@ const Services = () => {
                   ></path>
                 </svg>
               </span>
-              <span>File sharing</span>
+              <span>Content Upload</span>
+            </li>
+            <li>
+              <span className="icon">
+                <svg
+                  height="24"
+                  width="24"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path d="M0 0h24v24H0z" fill="none"></path>
+                  <path
+                    fill="currentColor"
+                    d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z"
+                  ></path>
+                </svg>
+              </span>
+              <span>Responsive Design</span>
+            </li>
+
+            <li>
+              <span className="icon">
+                <svg
+                  height="24"
+                  width="24"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path d="M0 0h24v24H0z" fill="none"></path>
+                  <path
+                    fill="currentColor"
+                    d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z"
+                  ></path>
+                </svg>
+              </span>
+              <span>Source Code</span>
             </li>
           </ul>
           <div className="action">
@@ -218,14 +250,11 @@ const Services = () => {
       >
         <div className="inner">
           <span className="pricing">
-            <span>
-              $49 <small>/ m</small>
-            </span>
+            <span>$20</span>
           </span>
-          <p className="title">Professional</p>
+          <p className="title">Premium</p>
           <p className="info">
-            This plan is for those who have a team already and running a large
-            business.
+            I will build an advance full stack website using next js react js.
           </p>
           <ul className="features">
             <li>
@@ -244,7 +273,7 @@ const Services = () => {
                 </svg>
               </span>
               <span>
-                <strong>20</strong> team members
+                <strong>6</strong> Pages
               </span>
             </li>
             <li>
@@ -263,7 +292,7 @@ const Services = () => {
                 </svg>
               </span>
               <span>
-                Plan <strong>team meetings</strong>
+                Design <strong>Customization</strong>
               </span>
             </li>
             <li>
@@ -281,7 +310,60 @@ const Services = () => {
                   ></path>
                 </svg>
               </span>
-              <span>File sharing</span>
+              <span>Content Upload</span>
+            </li>
+            <li>
+              <span className="icon">
+                <svg
+                  height="24"
+                  width="24"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path d="M0 0h24v24H0z" fill="none"></path>
+                  <path
+                    fill="currentColor"
+                    d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z"
+                  ></path>
+                </svg>
+              </span>
+              <span>Responsive Design</span>
+            </li>
+
+            <li>
+              <span className="icon">
+                <svg
+                  height="24"
+                  width="24"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path d="M0 0h24v24H0z" fill="none"></path>
+                  <path
+                    fill="currentColor"
+                    d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z"
+                  ></path>
+                </svg>
+              </span>
+              <span>Source Code</span>
+            </li>
+
+            <li>
+              <span className="icon">
+                <svg
+                  height="24"
+                  width="24"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path d="M0 0h24v24H0z" fill="none"></path>
+                  <path
+                    fill="currentColor"
+                    d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z"
+                  ></path>
+                </svg>
+              </span>
+              <span>More</span>
             </li>
           </ul>
           <div className="action">
