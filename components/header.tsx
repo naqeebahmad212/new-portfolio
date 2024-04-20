@@ -43,7 +43,7 @@ const Header = ({ user, session, ifKhan }: UserProps) => {
           </div>
 
           <div className="flex gap-5 items-center">
-            {ifKhan && !session && (
+            {!session && (
               <button
                 onClick={async () => await signIn()}
                 data-label="Register"
@@ -51,10 +51,8 @@ const Header = ({ user, session, ifKhan }: UserProps) => {
               >
                 <span className="sp">SignIn</span>
               </button>
-
-              // <button className="text-gray-300 btn btn-ghost"></button>
             )}
-            {ifKhan && session && (
+            {khan && session && (
               <button data-label="Register" className="rainbow-hover">
                 <Link
                   href={"/admin/dashboard"}
@@ -62,6 +60,16 @@ const Header = ({ user, session, ifKhan }: UserProps) => {
                 >
                   Dashboard
                 </Link>
+              </button>
+            )}
+
+            {!khan && session && (
+              <button
+                onClick={async () => await signOut({ callbackUrl: "/" })}
+                data-label="Register"
+                className="rainbow-hover"
+              >
+                <span className="sp">SignOut</span>
               </button>
             )}
 
