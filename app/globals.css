@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+  scroll-behavior: smooth;
+}
+
 @layer base {
   :root {
     --background: 222, 85%, 10%;
@@ -526,6 +530,6 @@ svg {
 .project-section,
 .service-section,
 .skill-section,
-.pageWrapper {
+.pageWrappe {
   will-change: trasnform;
 }

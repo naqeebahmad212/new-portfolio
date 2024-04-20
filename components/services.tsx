@@ -37,7 +37,10 @@ const Services = () => {
       ref={servIceRef}
       className="lg:h-screen w-screen  bg-[#041130] gap-5 flex items-center md:items-start pt-[120px] justify-center flex-col lg:flex-row sticky top-0 service-section "
     >
-      <div className="absolute top-0 lg:top-[80px] w-full my-5 left-5 text-white">
+      <div
+        id="service"
+        className="absolute top-0 lg:top-[80px] w-full my-5 left-5 text-white"
+      >
         <h1 className="w-full text-center text-2xl text-[#bed6fb] font-bold">
           Services
         </h1>
