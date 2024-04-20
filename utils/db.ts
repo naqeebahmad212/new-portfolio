@@ -3,6 +3,7 @@
 import { prisma } from "@/lib/prisma";
 import cloudinary from "@/utils/cloudinary";
 import { sendEmail } from "./sendEmail";
+import { revalidatePath } from "next/cache";
 
 // adding new project
 export const submitHandler = async (data: FormData) => {
@@ -62,5 +63,80 @@ export const AddUserMessage=async(data:FormData)=>{
   if(newMessage){
     sendEmail(options)
   }
+
+}
+
+
+
+export const deleteProject= async (id:string)=>{
+  const project=await prisma.project.findUnique({where:{id}})
+
+  if (project){
+    await cloudinary.v2.uploader.destroy(project.public_id)
+  }
+  await prisma.project.delete({
+    where:{id}
+  })
+  revalidatePath('/admin/projects')
+}
+
+
+
+export const updateHandler=async(data:FormData)=>{
+  const title = data.get("title")?.toString();
+  const snippet = data.get("snippet")?.toString();
+  const body = data.get("body")?.toString();
+  const image = data.get("image") as string;
+  const projectId=data.get('projectId')?.toString()
+
+
+
+  if (!title || !snippet || !body) {
+    throw new Error("Pleas fille all the fields");
+  }
+
+  const projectToUpdate=await prisma.project.findUnique({
+    where:{id:projectId}
+  })
+ 
+
+  if( !projectToUpdate) throw new Error('No Project Found');
+
+  
+  
+  if(image !=='' && image !== undefined ){
+   
+    const result = await cloudinary.v2.uploader.upload(image, {
+      folder: "portfolio",
+    });
+
+    await cloudinary.v2.uploader.destroy(projectToUpdate?.public_id)
+
+
+    const project = await prisma.project.update({
+      where:{id:projectId},
+      data: {
+        title,
+        snippet,
+        body,
+        image: result.secure_url,
+        public_id: result.public_id,
+      },
+    });
+  }else{
+   
+
+    const project = await prisma.project.update({
+      where:{id:projectId},
+      data: {
+        title,
+        snippet,
+        body,
+      },
+    });
+
+  }
+
+ 
 
 }

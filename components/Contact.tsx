@@ -48,9 +48,7 @@ function Contact() {
           </div>
           <div className="form-group relative">
             <label htmlFor="textarea">How Can We Help You?</label>
-            <textarea name="message" id="textarea" required>
-              {" "}
-            </textarea>
+            <textarea name="message" id="textarea" required />
           </div>
           <PostSubmitBtn className="sbButton">Send</PostSubmitBtn>
           {/* <button className="sbButton">

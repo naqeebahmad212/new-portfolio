@@ -16,10 +16,12 @@ const PostSubmitBtn = ({ children, className, ...props }: PostBtnProps) => {
       {...props}
       // onClick={()=> setPending(true) }
       disabled={pending}
-      className={`btn btn-primary  ${className}`}
+      className={`btn btn-primary text-white ${className}`}
     >
-      {pending && <span className="loading loading-spinner loading-xs" />}
-      {children}
+      {pending && (
+        <span className="loading loading-spinner text-white loading-xs" />
+      )}
+      {!pending && children}
     </button>
   );
 };

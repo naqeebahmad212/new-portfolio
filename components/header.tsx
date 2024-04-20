@@ -35,27 +35,13 @@ const Header = ({ user, session, ifKhan }: UserProps) => {
   return (
     <AlertDialog>
       <header className="fixed top-0 shadow-lg z-[9] w-full bg-[#041130] ">
-        <nav className="w-full relative p-4 flex items-center justify-between px-10 bg-transparent z-30 ">
-          <div className="brand text-2xl font-bold text-white">
+        <nav className="w-full relative p-4 flex items-center justify-between px-2 md:px-10 bg-transparent z-30 ">
+          <div className="brand text-lg md:text-2xl font-bold text-white">
             <Link href={"/"}>
               Port <span className="text-blue-500">Folio</span>
             </Link>
           </div>
 
-          {khan && (
-            <div>
-              <Link href={"/admin/add-new-project"} className=" text-blue-500">
-                Add Project
-              </Link>
-
-              <Link
-                href={"/admin/user-messages"}
-                className=" text-blue-500 px-3"
-              >
-                Messages
-              </Link>
-            </div>
-          )}
           <div className="flex gap-5 items-center">
             {ifKhan && !session && (
               <button
@@ -69,17 +55,18 @@ const Header = ({ user, session, ifKhan }: UserProps) => {
               // <button className="text-gray-300 btn btn-ghost"></button>
             )}
             {ifKhan && session && (
-              <button
-                onClick={async () => await signOut({ callbackUrl: "/" })}
-                data-label="Register"
-                className="rainbow-hover"
-              >
-                <span className="sp">SignOut</span>
+              <button data-label="Register" className="rainbow-hover">
+                <Link
+                  href={"/admin/dashboard"}
+                  className=" text-blue-500 text-sm sm:text-lg "
+                >
+                  Dashboard
+                </Link>
               </button>
-              //  <button className="text-gray-300 btn btn-ghost" >SignOut</button>
             )}
+
             <AlertDialogTrigger>
-              <button className="button">Hire Me</button>
+              <button className="button text-sm md:text-lg ">Hire Me</button>
             </AlertDialogTrigger>
           </div>
         </nav>

@@ -3,7 +3,7 @@ import React from "react";
 
 const CreateProject = () => {
   return (
-    <div className="w-screen">
+    <div className="">
       <NewProject />
     </div>
   );

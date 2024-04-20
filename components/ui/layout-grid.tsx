@@ -38,7 +38,7 @@ export const LayoutGrid = ({ cards }: { cards: Project[] }) => {
               selected?.id !== card.id && "flex flex-col",
               "relative overflow-hidden",
               selected?.id === card.id
-                ? "rounded-lg cursor-pointer absolute inset-0 h-[70%] w-full md:w-[70%] m-auto z-50 flex justify-center items-center flex-wrap flex-col"
+                ? "rounded-lg cursor-pointer absolute inset-0 h-[70%] bg-cover w-full md:w-[70%] m-auto z-50 flex justify-center items-center flex-wrap flex-col"
                 : lastSelected?.id === card.id
                   ? "z-40 bg-white rounded-xl h-full w-full"
                   : "bg-white rounded-xl h-full w-full"
@@ -76,7 +76,7 @@ const BlurImage = ({
       style={{ backgroundImage: `url(${card.image})` }}
       // onLoad={() => setLoaded(true)}
       className={cn(
-        " object-cover bg-cover flex items-end justify-center text-white bg-no-repeat absolute inset-0 h-full w-full transition duration-200 ",
+        "bg-cover flex items-end justify-center text-white bg-no-repeat absolute inset-0 h-full w-full transition duration-200 ",
         loaded ? "blur-none" : "blur-md"
       )}
     >
