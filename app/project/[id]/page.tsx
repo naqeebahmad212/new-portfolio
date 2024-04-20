@@ -14,7 +14,7 @@ const ProjectDeialtPage = async ({ params: { id } }: PostdetailsPageProps) => {
     where: { id: id },
   });
   return (
-    <div className="w-full">
+    <div className="w-full mt-[100px]">
       <div className="w-[83%] mx-auto">
         <div className="project-image p-6 h-[470px] w-[700px]">
           {project && (

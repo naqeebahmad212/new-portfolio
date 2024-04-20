@@ -3,10 +3,10 @@ import Image from "next/image";
 import Link from "next/link";
 import React, { useRef } from "react";
 import { signOut } from "next-auth/react";
-import MdHome from "@mui/icons-material/home";
+import MdHome from "@mui/icons-material/Home";
 import MdPeople from "@mui/icons-material/People";
 import MdNoteAdd from "@mui/icons-material/NoteAdd";
-import MdLogout from "@mui/icons-material/logout";
+import MdLogout from "@mui/icons-material/Logout";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 
 import { usePathname } from "next/navigation";
