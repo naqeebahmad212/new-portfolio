@@ -45,7 +45,10 @@ const HeroSection = () => {
   const translateYBackg = useTransform(scrollYProgress, [0, 0.2], [0, 500]);
 
   return (
-    <BackgroundGradientAnimation marginTop={translateYBackg} className="">
+    <BackgroundGradientAnimation
+      marginTop={translateYBackg}
+      className="hero-section"
+    >
       <div
         ref={ref}
         className="flex items-center justify-around flex-col lg:flex-row lg:h-screen w-full p-5 "
@@ -106,7 +109,7 @@ const HeroSection = () => {
               backgroundColor: `${bgClr}`,
 
               opacity,
-              translateY:translateYDown,
+              translateY: translateYDown,
             }}
           >
             <motion.img
@@ -114,7 +117,7 @@ const HeroSection = () => {
               animate={{ y: 0 }}
               className="relative z-30 "
               style={{
-                translateY:translateYDown,
+                translateY: translateYDown,
                 opacity,
               }}
               transition={{ duration: 0.5 }}

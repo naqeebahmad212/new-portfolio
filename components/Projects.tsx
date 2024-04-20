@@ -39,7 +39,7 @@ const Projects = ({ projects }: ProjectsPrps) => {
       }}
       transition={{ duration: 5 }}
       ref={ref}
-      className="relative w-screen pb-5 lg:px-[100px]  h-screen bg-[#041130]"
+      className="relative w-screen pb-5 lg:px-[100px]  h-screen bg-[#041130] project-section"
     >
       {pathname == "/" && (
         <div className="absolute top-[50px] right-[120px] justify-end z-[999]">

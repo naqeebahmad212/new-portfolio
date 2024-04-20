@@ -60,7 +60,7 @@ const Skills = () => {
         translateY,
       }}
       ref={ref}
-      className="py-10 w-screen pt-[100px] lg:h-screen  bg-[#041130]"
+      className="py-10 w-screen pt-[100px] lg:h-screen  bg-[#041130] skill-section"
     >
       <h1 className="text-center w-full text-2xl font-bold text-[#bed6fb]">
         My Skills
