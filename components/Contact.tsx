@@ -3,6 +3,12 @@ import { AddUserMessage } from "@/utils/db";
 import { motion, useScroll, useSpring, useTransform } from "framer-motion";
 import React from "react";
 import PostSubmitBtn from "./SubmitBtn";
+import toast from "react-hot-toast";
+
+interface Result {
+  success?: string;
+  error?: "string";
+}
 
 // write a function to add to number
 
@@ -18,6 +24,15 @@ function Contact() {
   const scale = useTransform(scrollYProgress, [0, 0.9], [0, 1]);
   const rotateZ = useTransform(scrollYProgress, [0, 0.3], [20, 0]);
   const translateX = useTransform(scrollYProgress, [0.5, 0.7], [0, 1500]);
+
+  const clientAction = async (formData: FormData) => {
+    const result: Result = await AddUserMessage(formData);
+    if (result?.error) {
+      toast.error(result.error);
+    } else if (result.success) {
+      toast.success(result.success);
+    }
+  };
   return (
     <motion.div
       ref={ref}
@@ -31,7 +46,7 @@ function Contact() {
         Contact us
       </h1>{" "}
       <div className="form-container self-center">
-        <form action={AddUserMessage} className="form">
+        <form action={clientAction} className="form">
           <div className="form-group relative">
             <label className="plc">Name</label>
             <input className="inp" type="text" id="name" name="name" required />

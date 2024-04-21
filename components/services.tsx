@@ -24,18 +24,17 @@ const Services = () => {
 
   const translateXCard3 = useTransform(scrollYProgress, [0.2, 0.5], [-830, 0]);
 
+  const isDeskstop = true;
+
   return (
     // <AuroraBackground className="relative">
     <motion.div
       style={{
         translateY,
         // translateX,
-
-        scale,
-        opacity,
       }}
       ref={servIceRef}
-      className="lg:h-screen w-screen  bg-[#041130] gap-5 flex items-center md:items-start pt-[120px] justify-center flex-col lg:flex-row sticky top-0 service-section "
+      className="lg:h-screen w-screen  bg-[#041130] gap-5 flex items-center md:items-start pt-[120px] justify-center flex-col lg:flex-row sticky top-0 service-section mb-10 "
     >
       <div
         id="service"

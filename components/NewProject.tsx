@@ -5,6 +5,12 @@ import { CKEditor } from "@ckeditor/ckeditor5-react";
 import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
 import { submitHandler } from "@/utils/db";
 import PostSubmitBtn from "./SubmitBtn";
+import toast from "react-hot-toast";
+
+interface Result {
+  success?: string;
+  error?: "string";
+}
 const NewProject = () => {
   const [editorData, setEditorData] = useState("");
   const [file, setFile] = useState<string | ArrayBuffer>("");
@@ -32,9 +38,18 @@ const NewProject = () => {
     }
   };
 
+  const clientAction = async (formData: FormData) => {
+    const result: Result = await submitHandler(formData);
+    if (result?.error) {
+      toast.error(result.error);
+    } else if (result.success) {
+      toast.success(result.success);
+    }
+  };
+
   return (
     <div className=" min-h-screen flex items-center justify-center">
-      <form action={submitHandler} className="w-full lg:w-[70%]">
+      <form action={clientAction} className="w-full lg:w-[70%]">
         <div className="form-group my-2">
           <label htmlFor="title" className="text-gray-300 mb-1">
             Title
@@ -44,6 +59,7 @@ const NewProject = () => {
             name="title"
             placeholder="Type here..."
             className="input rounded-none w-full"
+            required
           />
         </div>
 
@@ -56,6 +72,7 @@ const NewProject = () => {
             name="snippet"
             placeholder="Type here..."
             className="input rounded-none w-full"
+            required
           />
         </div>
 
@@ -68,6 +85,7 @@ const NewProject = () => {
             type="file"
             name="img"
             className="input file-input rounded-none w-full"
+            required
           />
           <input type="hidden" name="image" value={file.toString()} id="" />
         </div>

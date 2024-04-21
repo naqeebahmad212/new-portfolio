@@ -4,16 +4,21 @@ import { prisma } from "@/lib/prisma";
 import cloudinary from "@/utils/cloudinary";
 import { sendEmail } from "./sendEmail";
 import { revalidatePath } from "next/cache";
+import { getErrorMessage } from "./getErrorMessage";
+
+
 
 // adding new project
-export const submitHandler = async (data: FormData) => {
+export const submitHandler = async (data: FormData) : Promise<Object>  => {
+ try {
   const title = data.get("title")?.toString();
   const snippet = data.get("snippet")?.toString();
   const body = data.get("body")?.toString();
   const image = data.get("image") as string;
 
   if (!title || !snippet || !body || !image) {
-    throw new Error("Pleas fille all the fields");
+
+    throw new Error("All fields required");
   }
 
   const result = await cloudinary.v2.uploader.upload(image, {
@@ -28,19 +33,31 @@ export const submitHandler = async (data: FormData) => {
       public_id: result.public_id,
     },
   });
+
+  return{
+    success : 'Added Successfully'
+  }
+  
+ } catch (error:unknown) {
+  return{
+    error:getErrorMessage(error)
+  }
+ }
 };
 
 
 
 // receiving user message
 
-export const AddUserMessage=async(data:FormData)=>{
+export const AddUserMessage=async(data:FormData) : Promise<Object> =>{
+try {
 
+  
   const name=data.get('name')?.toString();
   const email=data.get('email')?.toString();
   const message=data.get('message')?.toString();
 
-  if (!name || !email || !message) throw new Error('Fill all the field and try')
+  if (!name || !email || !message) throw new Error('Fill all the fields and try')
 
   const newMessage=await prisma.message.create({
     data:{name , email , message,
@@ -61,8 +78,20 @@ export const AddUserMessage=async(data:FormData)=>{
     Best regards.`
   }
   if(newMessage){
-    sendEmail(options)
+    await sendEmail(options)
+  
   }
+
+  return{
+    success:'Message sent Successfully , check email.'
+  }
+  
+} catch (error:unknown) {
+return{
+  error:getErrorMessage(error)
+}
+  
+}
 
 }
 
