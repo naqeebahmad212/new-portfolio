@@ -29,7 +29,7 @@ export const LayoutGrid = ({ cards }: { cards: Project[] }) => {
   const ref = React.useRef(null);
 
   return (
-    <motion.div className="w-full h-full  pb-[100px] grid grid-cols-1 md:grid-cols-3  max-w-7xl mx-auto gap-4 ">
+    <motion.div className="w-full h-full  pb-[50px] grid grid-cols-1 md:grid-cols-3  max-w-7xl mx-auto gap-4 ">
       {cards.map((card, i) => (
         <div key={i} className={cn("")}>
           <motion.div

@@ -3,6 +3,7 @@ import "./globals.css";
 import Header from "@/components/header";
 import HeaderMain from "@/components/HeaderMain";
 import { Toaster } from "react-hot-toast";
+import PageWrapper from "@/components/PageWrapper";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -16,7 +17,7 @@ export default function RootLayout({
       <body className={inter.className}>
         <Toaster position="top-right" />
         <HeaderMain />
-        {children}
+        <PageWrapper>{children}</PageWrapper>
       </body>
     </html>
   );

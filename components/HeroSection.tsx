@@ -37,19 +37,19 @@ const HeroSection = () => {
     >
       <div
         ref={ref}
-        className="flex items-center justify-around flex-col lg:flex-row lg:h-screen w-full p-5 "
+        className="flex items-center justify-around flex-col lg:flex-row lg:h-screen w-full p-10 "
       >
-        <motion.div
-          initial={{ opacity: 0, x: -100 }}
-          animate={{ opacity: 1, x: 0 }}
-          exit={{ opacity: 0 }}
-          transition={{
-            duration: 0.9,
-            delay: 0.7,
-          }}
-          style={{
-            translateY,
-          }}
+        <div
+          // initial={{ opacity: 0, x: -100 }}
+          // animate={{ opacity: 1, x: 0 }}
+          // exit={{ opacity: 0 }}
+          // transition={{
+          //   duration: 0.9,
+          //   delay: 0.7,
+          // }}
+          // style={{
+          //   translateY,
+          // }}
           className={`intro w-[100%] md:w-[60%] self-start md:mt-[40px] lg:mt-[100px] h-[30%] pt-[100px] pl-5 md:pl-[50px]  `}
         >
           <div className={` text-3xl text-white font-bold`}>
@@ -63,7 +63,7 @@ const HeroSection = () => {
             backend systems with frameworks like Node.js, expressjs , convex and
             other.
           </div>
-        </motion.div>
+        </div>
 
         <motion.div className="relative">
           <motion.div

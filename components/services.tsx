@@ -29,26 +29,26 @@ const Services = () => {
   return (
     // <AuroraBackground className="relative">
     <motion.div
-      style={{
-        translateY,
-        // translateX,
-      }}
+      // style={{
+      //   translateY,
+      //   // translateX,
+      // }}
       ref={servIceRef}
-      className="lg:h-screen w-screen  bg-[#041130] gap-5 flex items-center md:items-start pt-[120px] justify-center flex-col lg:flex-row sticky top-0 service-section mb-10 "
+      className="lg:h-screen w-screen  bg-[#041130] gap-5 flex items-start pt-[70px] justify-center flex-col lg:flex-row sticky top-0 service-section overflow-y-scroll overflow-x-hidden "
     >
       <div
         id="service"
-        className="absolute top-0 lg:top-[80px] w-full my-5 left-5 text-white"
+        className="absolute top-0 lg:top-[80px] w-full  left-5 text-white"
       >
         <h1 className="w-full text-center text-2xl text-[#bed6fb] font-bold">
           Services
         </h1>
       </div>
       <motion.div
-        style={{
-          translateX: translateXCard1,
-        }}
-        transition={{ duration: 2 }}
+        // style={{
+        //   translateX: translateXCard1,
+        // }}
+        // transition={{ duration: 2 }}
         className="plan w-[80%] md:w-[400px] lg:w-[300px] card1 mt-[60px] text-gray-300 z-[999]"
       >
         <div className="inner">
@@ -127,10 +127,10 @@ const Services = () => {
       </motion.div>
 
       <motion.div
-        style={{
-          translateX: translateXCard2,
-        }}
-        transition={{ duration: 2 }}
+        // style={{
+        //   translateX: translateXCard2,
+        // }}
+        // transition={{ duration: 2 }}
         className="plan w-[80%] md:w-[400px] lg:w-[300px] card2 mt-[60px]"
       >
         <div className="inner">
@@ -232,6 +232,7 @@ const Services = () => {
                 </svg>
               </span>
               <span>Source Code</span>
+              <span>More</span>
             </li>
           </ul>
           <div className="action">
@@ -243,12 +244,12 @@ const Services = () => {
       </motion.div>
 
       <motion.div
-        style={{
-          translateX: translateXCard3,
-          transitionProperty: translateX,
-        }}
-        transition={{ duration: 2 }}
-        className="plan w-[80%] md:w-[400px] lg:w-[300px] card3 mt-[60px]"
+        // style={{
+        //   translateX: translateXCard3,
+        //   transitionProperty: translateX,
+        // }}
+        // transition={{ duration: 2 }}
+        className="plan w-[80%] md:w-[400px] lg:w-[300px] card3  mt-[60px]"
       >
         <div className="inner">
           <span className="pricing">

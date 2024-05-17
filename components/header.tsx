@@ -23,6 +23,8 @@ import {
 import { User } from "@prisma/client";
 import { signIn, signOut } from "next-auth/react";
 import { Session } from "next-auth";
+import SideNav from "./SideNavigation";
+import MobileNav from "./MobileNav";
 
 interface UserProps {
   user: User | null;
@@ -79,6 +81,8 @@ const Header = ({ user, session, ifKhan }: UserProps) => {
           </div>
         </nav>
       </header>
+      <SideNav />
+      <MobileNav />
 
       <AlertDialogContent>
         <AlertDialogHeader>

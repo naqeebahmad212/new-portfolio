@@ -16,25 +16,10 @@ export const metadata: Metadata = {
 export default async function Home() {
   const projects = await prisma.project.findMany({ orderBy: { id: "desc" } });
   return (
-    <PageWrapper>
-      <div className="w-full overflow-hidden">
-        <section className="sticky top-0 ">
-          <HeroSection />
-        </section>
-        <section className="sticky top-0 ]  bg-[#041130]">
-          <Services />
-        </section>
-        <section className="sticky top-0 ]">
-          <Skills />
-        </section>
-        <section className="sticky top-0 ]">
-          <Projects projects={projects.slice(0, 6)} />
-        </section>
-
-        <section className="sticky top-0 ]">
-          <Contact />
-        </section>
-      </div>
-    </PageWrapper>
+    <div className="w-full overflow-hidden">
+      <section className="sticky top-0 ">
+        <HeroSection />
+      </section>
+    </div>
   );
 }

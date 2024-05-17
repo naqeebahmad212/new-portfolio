@@ -30,14 +30,14 @@ const Projects = ({ projects }: ProjectsPrps) => {
 
   return (
     <motion.div
-      style={{
-        // translateX,
-        opacity,
-        scale,
-        translateY,
-        marginBottom,
-      }}
-      transition={{ duration: 5 }}
+      // style={{
+      //   // translateX,
+      //   opacity,
+      //   scale,
+      //   translateY,
+      //   marginBottom,
+      // }}
+      // transition={{ duration: 5 }}
       ref={ref}
       className="relative w-screen pb-5 lg:px-[100px]  h-screen bg-[#041130] project-section"
     >
